@@ -13,7 +13,7 @@ def download_file(url, save_path):
 
 
 def download_multiple(urls, save_folder, prefix):
-    for idx, s in enumerate(urls):
+    for idx, url in enumerate(urls):
         # Parse the URL
         parsed_url = urlparse(url)
         path = parsed_url.path
@@ -22,7 +22,7 @@ def download_multiple(urls, save_folder, prefix):
         # Split the filename into its root and extension
         root, ext = os.path.splitext(filename)
 
-        download_file(s, f'{save_folder}/{prefix}-{idx}.{ext}')
+        download_file(url, f'{save_folder}/{prefix}-{idx}.{ext}')
 
 
 def collect_links(page_links, target_selector, target_property):
