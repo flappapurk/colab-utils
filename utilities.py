@@ -14,7 +14,9 @@ def download_file(url, save_path):
 
 def download_multiple(urls, save_folder, prefix):
     for idx, s in enumerate(urls):
-        ext = s.split('.')[-1]
+        # ext = s.split('.')[-1]
+        url_parts = urlparse.urlparse(s)
+        ext = url_parts.path.split('.')[-1]
         download_file(s, f'{save_folder}/{prefix}-{idx}.{ext}')
 
 
