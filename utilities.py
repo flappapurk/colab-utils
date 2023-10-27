@@ -22,7 +22,7 @@ def download_multiple(urls, save_folder, prefix):
         # Split the filename into its root and extension
         root, ext = os.path.splitext(filename)
 
-        download_file(url, f'{save_folder}/{prefix}-{idx}.{ext}')
+        download_file(url, f'{save_folder}/{prefix}-{idx}{ext}')
 
 
 def collect_links(page_links, target_selector, target_property):
